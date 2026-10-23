@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jonathan Sanjaya | Front-End Developer & Data Analyst</title>
+  <meta name="description" content="Portfolio of Jonathan Sanjaya, an Informatics Engineering student at Universitas Tarumanagara seeking Front-End Development or Data Analytics internships.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;700;800&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.16.0/devicon.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container navbar-inner">
+      <a href="#home" class="logo" aria-label="Back to top">JS</a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="nav-links">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i>
+      </button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-text">
+          <h1>Jonathan Sanjaya</h1>
+          <p class="hero-title">Front-End Developer &amp; Data Analyst</p>
+          <p class="hero-intro">I am an Informatics Engineering student at Universitas Tarumanagara with a strong interest in front-end development, machine learning, and data analytics. I build responsive web interfaces using JavaScript, React, and Bootstrap, while exploring data-driven solutions through machine learning and statistical analysis. With experience as a Teaching Assistant and student organization leader, I bring technical problem-solving, communication, and teamwork skills to every project. I am currently seeking internship opportunities in Front-End Development or Data Analytics to apply my knowledge to real-world challenges.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View My Projects</a>
+            <a href="#contact" class="btn btn-outline">Contact Me</a>
+          </div>
+        </div>
+        <div class="hero-photo">
+          <div class="photo-frame" id="profile-frame">
+            <img src="images/profile.jpg" alt="Portrait of Jonathan Sanjaya" width="400" height="480">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <div class="container">
+        <h2 class="section-title">Skills</h2>
+        <div id="hard-skills"></div>
+        <h3 class="sub-title">Soft Skills</h3>
+        <ul class="badges" id="soft-skills"></ul>
+      </div>
+    </section>
+
+    <section id="projects" class="section section-tint">
+      <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="project-grid" id="project-grid"></div>
+      </div>
+    </section>
+
+    <section id="experience" class="section">
+      <div class="container">
+        <h2 class="section-title">Experience &amp; Leadership</h2>
+        <div class="timeline" id="timeline"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <section id="contact" class="contact">
+      <div class="container">
+        <h2 class="section-title">Contact</h2>
+        <p class="contact-text">Let's connect and discuss opportunities to collaborate.</p>
+        <div class="social" id="social"></div>
+      </div>
+    </section>
+    <section id="copyright" class="copyright">
+      <p>&copy; <span id="year">2026</span> Jonathan Sanjaya. All rights reserved.</p>
+    </section>
+  </footer>
+
+  <dialog id="project-modal" aria-labelledby="modal-title">
+    <button class="modal-close" id="modal-close" aria-label="Close project details"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
+    <div id="modal-media" class="modal-media"></div>
+    <div class="modal-body">
+      <h3 id="modal-title"></h3>
+      <p class="modal-year" id="modal-year"></p>
+      <p id="modal-desc"></p>
+      <ul class="tags" id="modal-tags"></ul>
+    </div>
+  </dialog>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
