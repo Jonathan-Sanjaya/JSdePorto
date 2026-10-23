@@ -23,23 +23,28 @@ const softSkills = ["Problem-Solving", "Critical Thinking", "Ability to Work Und
   "Teamwork", "Leadership", "Teaching & Mentoring", "Adaptability"];
 
 const projects = [
-  { title: "Kantin Kirno Food Ordering App & Admin CMS", year: "2026", img: "images/projects/kantin-kirno.jpg", icon: "fa-utensils",
+  { title: "Kantin Kirno Food Ordering App & Admin CMS", year: "2026", img: "Image/Kirno.jpeg", icon: "fa-utensils",
+    url: "https://github.com/VincentWu503/kantin-kirno-order-app",
     short: "A food ordering application with customer-facing interfaces and an administrative content management system.",
     detail: "Designed and developed the user-facing interface for the homepage, order history, login, registration, password recovery, profile, order status, shopping cart, and checkout. Developed admin CMS interfaces for menu management, order lists, profile management, administrator account management, and store operating status controls. Also prepared capstone project documentation and system diagrams, including activity, class, component, sequence, state, and use case diagrams.",
     tags: ["User Interface", "Admin CMS", "System Diagrams"] },
-  { title: "Ayam Ojolali Restaurant Website & Admin Dashboard", year: "2025", img: "images/projects/ayam-ojolali.jpg", icon: "fa-store",
+  { title: "Ayam Ojolali Restaurant Website & Admin Dashboard", year: "2025", img: "Image/Ojolali.jpeg", icon: "fa-store",
+    url: "https://github.com/DanielKA014/uas-fe-frontend",
     short: "A restaurant website paired with an admin dashboard for menu and branch address management.",
     detail: "Developed user-facing pages for the homepage, menu, customer reviews, login, registration, and password recovery, while improving the About page. Built admin dashboard interfaces that support menu CRUD operations and branch address management, allowing administrators to manage menu items and update restaurant locations.",
     tags: ["User Pages", "Admin Dashboard", "Menu CRUD"] },
-  { title: "AnterIn Transportation & Delivery App UI", year: "2025", img: "images/projects/anterin.jpg", icon: "fa-motorcycle",
+  { title: "AnterIn Transportation & Delivery App UI", year: "2025", img: "Image/AnterIn.jpeg", icon: "fa-motorcycle",
+    url: "https://github.com/DanielKA014/AnterIn",
     short: "A transportation and delivery application UI designed to support dummy-user testing.",
     detail: "Designed and developed user interface screens for car and motorcycle services, ride and delivery flows, messaging, voice calls, and chat. The interfaces were created to support testing with dummy users and demonstrate the application's main transportation and communication flows.",
     tags: ["UI Design", "Ride & Delivery", "Chat & Voice Calls"] },
-  { title: "SVM vs CatBoost for Sentiment Analysis of Electronic Product Reviews", year: "2026", img: "images/projects/svm-catboost.jpg", icon: "fa-comments",
+  { title: "SVM vs CatBoost for Sentiment Analysis of Electronic Product Reviews", year: "2026", img: "Image/ProdukElektronik.jpg", icon: "fa-comments",
+    url: "https://drive.google.com/drive/folders/1nG1A9-glfcIwfQnJZ2z7ARKbvFt-olKU",
     short: "A machine learning research project comparing two classification algorithms for electronic product review sentiment analysis.",
     detail: "Compared Support Vector Machine (SVM) and CatBoost using sentiment labels generated with VADER and TF-IDF feature representations. Evaluated classification performance on imbalanced electronic product review data.",
     tags: ["SVM", "CatBoost", "VADER", "TF-IDF"] },
-  { title: "SVR, XGBoost, and Decision Tree for UPDRS Score Estimation in Parkinson's Patients", year: "2025", img: "images/projects/parkinsons-regression.jpg", icon: "fa-chart-line",
+  { title: "SVR, XGBoost, and Decision Tree for UPDRS Score Estimation in Parkinson's Patients", year: "2025", img: "Image/Parkinson.jpg", icon: "fa-chart-line",
+    url: "https://drive.google.com/drive/folders/1G011QepUPyYwp2RWxT2vSsekftgkMI0J",
     short: "A machine learning research project investigating regression models for estimating Parkinson's disease severity scores.",
     detail: "Evaluated Support Vector Regression (SVR), XGBoost, and Decision Tree regression algorithms for predicting Unified Parkinson's Disease Rating Scale (UPDRS) scores using biomedical voice measurements and patient demographic data.",
     tags: ["SVR", "XGBoost", "Decision Tree"] }
@@ -153,7 +158,20 @@ let lastFocus = null;
 function openModal(i) {
   const p = projects[i];
   lastFocus = document.activeElement;
-  $("modal-media").innerHTML = `<img src="${p.img}" alt="${esc(p.title)} preview">`;
+  $("modal-media").innerHTML = `
+    <a
+      class="project-modal-image-link"
+      href="${p.url}"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Learn more about ${esc(p.title)}"
+    >
+      <img src="${p.img}" alt="${esc(p.title)} preview">
+      <div class="project-image-overlay" aria-hidden="true">
+        <span>Learn More</span>
+      </div>
+    </a>
+  `;
   withFallback($("modal-media").querySelector("img"), p.icon, "Project image placeholder");
   $("modal-title").textContent = p.title;
   $("modal-year").textContent = p.year;

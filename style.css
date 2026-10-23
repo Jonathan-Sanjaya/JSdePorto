@@ -113,6 +113,50 @@ h1 { font-size: clamp(2.4rem, 5vw, 3.6rem); font-weight: 800; }
 dialog { width: min(92vw, 680px); max-height: 90vh; padding: 0; border: none; border-radius: 18px; background: var(--surface); color: var(--navy); overflow: auto; box-shadow: 0 20px 60px rgba(31, 42, 68, .3); }
 dialog::backdrop { background: rgba(31, 42, 68, .55); }
 .modal-media { aspect-ratio: 16 / 9; background: var(--blue-soft); }
+.project-modal-image-link {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 0;
+  cursor: pointer;
+}
+.project-modal-image-link img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+.project-image-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10, 20, 35, 0.65);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+.project-image-overlay span {
+  color: #ffffff;
+  font-size: 1.08rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+.project-modal-image-link:hover img,
+.project-modal-image-link:focus-visible img {
+  opacity: 0.65;
+}
+.project-modal-image-link:hover .project-image-overlay,
+.project-modal-image-link:focus-visible .project-image-overlay {
+  opacity: 1;
+}
+.project-modal-image-link:focus-visible {
+  outline: 3px solid var(--blue);
+  outline-offset: 4px;
+}
 .modal-body { padding: 1.5rem 1.8rem 1.8rem; display: grid; gap: .6rem; }
 .modal-body h3 { font-size: 1.4rem; }
 .modal-body p { margin: 0; color: var(--muted); }
